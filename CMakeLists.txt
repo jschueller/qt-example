@@ -11,6 +11,7 @@ set (CMAKE_CXX_STANDARD 11)
 add_executable (qtex main.cxx)
 qt5_use_modules (qtex Widgets)
 target_link_libraries (qtex ${QT_LIBRARIES})
+install(TARGETS qtex DESTINATION bin)
 
 enable_testing()
 add_test (NAME qtex COMMAND xvfb-run ${CMAKE_CROSSCOMPILING_EMULATOR} $<TARGET_FILE:qtex> ${MAIN_ARGS})
